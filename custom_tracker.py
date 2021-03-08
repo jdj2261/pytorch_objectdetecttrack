@@ -10,9 +10,9 @@ from torch.autograd import Variable
 from PIL import Image
 
 # load weights and set defaults
-config_path= 'config/yolov3.cfg'
-weights_path='config/yolov3.weights'
-class_path=  'config/coco.names'    
+config_path= 'config/yolov3_custom.cfg'     #'config/yolov3_custom.cfg'     #'config/yolov3.cfg'
+weights_path='config/yolov3_custom.weights' #'config/yolov3_custom.weights' #'config/yolov3.weights'
+class_path=  'config/custom.names'     #'config/custom.names'          #'config/coco.names'
 img_size=416
 conf_thres=0.8
 nms_thres=0.4
@@ -52,7 +52,7 @@ import cv2
 from sort import *
 colors=[(255,0,0),(0,255,0),(0,0,255),(255,0,255),(128,0,0),(0,128,0),(0,0,128),(128,0,128),(128,128,0),(0,128,128)]
 
-vid = cv2.VideoCapture(2)
+vid = cv2.VideoCapture(videopath)
 mot_tracker = Sort() 
 
 cv2.namedWindow('Stream',cv2.WINDOW_NORMAL)

@@ -27,7 +27,7 @@ $ conda activate pytorch_objectdetecttrack
 
   ```
   $ git clone https://github.com/cfotache/pytorch_objectdetecttrack.git
-  $ cd pytorch-yolo-v3
+  $ cd pytorch_objectdetecttrack
   ```
 
 ### 3. pytorch 설치하기
@@ -65,20 +65,27 @@ $ conda activate pytorch_objectdetecttrack
   $ wget https://pjreddie.com/media/files/yolov3.weights 
   ~~~
 
-- Image Demo
+  - custom 가중치 다운로드
 
-  ~~~
-  $ python detect.py --images $(img path) --det det 
-  ~~~
+    [yolov3_custom.weights](https://drive.google.com/file/d/1IQij8aMnj7CQFa4VFg4Qqz5rPR-irjQB/view?usp=sharing) 다운 (237MB)
+
+    ~~~
+    $ curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=1IQij8aMnj7CQFa4VFg4Qqz5rPR-irjQB" > /dev/null
+    $ curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=1IQij8aMnj7CQFa4VFg4Qqz5rPR-irjQB" -o yolov3_custom.weights
+    ~~~
 
 - Video Demo
 
   ~~~
-  $ python video_demo.py --video video.avi
+  $ python3 object_tracker.py
   ~~~
 
-- Webcam Demo
-
-  ~~~
-  $ python cam_demo.py
-  ~~~
+  > object_tracker.py 파일 수정
+  >
+  > config_path= 'config/yolov3.cfg'
+  >
+  > weights_path='config/yolov3.weights'
+  >
+  > class_path=  'config/coco.names'    
+  >
+  > videopath = '/home/djjin/Videos/dwelling.mp4'
