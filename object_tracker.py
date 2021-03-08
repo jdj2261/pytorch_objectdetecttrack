@@ -10,9 +10,9 @@ from torch.autograd import Variable
 from PIL import Image
 
 # load weights and set defaults
-config_path='config/yolov3.cfg'
-weights_path='config/yolov3.weights'
-class_path='config/coco.names'
+config_path= 'config/yolov3_custom.cfg'     #'config/yolov3_custom.cfg'     #'config/yolov3.cfg'
+weights_path='config/yolov3_custom.weights' #'config/yolov3_custom.weights' #'config/yolov3.weights'
+class_path=  'config/custom.names'     #'config/custom.names'          #'config/coco.names'
 img_size=416
 conf_thres=0.8
 nms_thres=0.4
@@ -46,7 +46,7 @@ def detect_image(img):
         detections = utils.non_max_suppression(detections, 80, conf_thres, nms_thres)
     return detections[0]
 
-videopath = '../data/video/overpass.mp4'
+videopath = '/home/djjin/Videos/dwelling.mp4'
 
 import cv2
 from sort import *
