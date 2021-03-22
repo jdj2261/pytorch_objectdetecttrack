@@ -9,8 +9,8 @@ pytorch_objectdetecttrack 설치 및 데모 실행하기 ([pytorch_objectdetectt
 > Environment
 >
 > - Ubuntu Version : 18.04
-> - CUDA Version : 10.0
-> - cuDNN Version :  7.6.5
+> - CUDA Version : 11.0
+> - cuDNN Version :  7.6.4
 
 
 
@@ -53,7 +53,7 @@ $ conda activate pytorch_objectdetecttrack
   $ conda install scikit-image (pytorch_objectdetecttrack)
   $ conda install scikit-learn (pytorch_objectdetecttrack)
   $ conda install filterpy (pytorch_objectdetecttrack)
-  $ conda install --channel mempo opencv
+  $ conda install --channel menpo opencv
   $ pip install opencv-contrib-python
   ~~~
 
